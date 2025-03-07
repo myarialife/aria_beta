@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="gradMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A237E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7B1FA2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradOpenAI" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10A37F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0D8A6C;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradDeepSeek" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF5722;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D84315;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradAnthropic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#536DFE;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3949AB;stop-opacity:1" />
+    </linearGradient>
+    <filter id="softShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#1A237E">ARIA AI Models Integration</text>
+  
+  <!-- Main ARIA system -->
+  <rect x="350" y="80" width="100" height="100" rx="50" ry="50" fill="url(#gradMain)" filter="url(#softShadow)"/>
+  <text x="400" y="130" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">ARIA</text>
+  
+  <!-- OpenAI -->
+  <rect x="100" y="200" width="150" height="80" rx="10" ry="10" fill="url(#gradOpenAI)" filter="url(#softShadow)"/>
+  <text x="175" y="245" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">OpenAI</text>
+  
+  <!-- DeepSeek -->
+  <rect x="325" y="200" width="150" height="80" rx="10" ry="10" fill="url(#gradDeepSeek)" filter="url(#softShadow)"/>
+  <text x="400" y="245" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">DeepSeek</text>
+  
+  <!-- Anthropic -->
+  <rect x="550" y="200" width="150" height="80" rx="10" ry="10" fill="url(#gradAnthropic)" filter="url(#softShadow)"/>
+  <text x="625" y="245" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Anthropic</text>
+  
+  <!-- Connection Lines -->
+  <path d="M 375,180 L 175,200" stroke="#10A37F" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M 400,180 L 400,200" stroke="#FF5722" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M 425,180 L 625,200" stroke="#536DFE" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- API Examples -->
+  <rect x="50" y="320" width="250" height="150" rx="10" ry="10" fill="white" stroke="#10A37F" stroke-width="2" filter="url(#softShadow)"/>
+  <text x="175" y="345" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#10A37F">OpenAI API Example</text>
+  <rect x="60" y="355" width="230" height="105" rx="5" ry="5" fill="#F5F5F5"/>
+  <text x="70" y="375" font-family="Courier New, monospace" font-size="12" text-anchor="start" fill="#333">
+    <tspan x="70" dy="0">const response = await openai</tspan>
+    <tspan x="70" dy="16">.chat.completions.create({</tspan>
+    <tspan x="70" dy="16">  model: "gpt-4-turbo",</tspan>
+    <tspan x="70" dy="16">  messages: messages,</tspan>
+    <tspan x="70" dy="16">  temperature: 0.7</tspan>
+    <tspan x="70" dy="16">});</tspan>
+  </text>
+  
+  <rect x="275" y="320" width="250" height="150" rx="10" ry="10" fill="white" stroke="#FF5722" stroke-width="2" filter="url(#softShadow)"/>
+  <text x="400" y="345" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FF5722">DeepSeek API Example</text>
+  <rect x="285" y="355" width="230" height="105" rx="5" ry="5" fill="#F5F5F5"/>
+  <text x="295" y="375" font-family="Courier New, monospace" font-size="12" text-anchor="start" fill="#333">
+    <tspan x="295" dy="0">const response = await axios</tspan>
+    <tspan x="295" dy="16">.post('api.deepseek.com', {</tspan>
+    <tspan x="295" dy="16">  model: "deepseek-coder",</tspan>
+    <tspan x="295" dy="16">  messages: messages,</tspan>
+    <tspan x="295" dy="16">  temperature: 0.5</tspan>
+    <tspan x="295" dy="16">});</tspan>
+  </text>
+  
+  <rect x="500" y="320" width="250" height="150" rx="10" ry="10" fill="white" stroke="#536DFE" stroke-width="2" filter="url(#softShadow)"/>
+  <text x="625" y="345" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#536DFE">Claude API Example</text>
+  <rect x="510" y="355" width="230" height="105" rx="5" ry="5" fill="#F5F5F5"/>
+  <text x="520" y="375" font-family="Courier New, monospace" font-size="12" text-anchor="start" fill="#333">
+    <tspan x="520" dy="0">const response = await client</tspan>
+    <tspan x="520" dy="16">.messages.create({</tspan>
+    <tspan x="520" dy="16">  model: "claude-3-opus",</tspan>
+    <tspan x="520" dy="16">  system: instructions,</tspan>
+    <tspan x="520" dy="16">  messages: formattedMsgs</tspan>
+    <tspan x="520" dy="16">});</tspan>
+  </text>
+</svg> 
