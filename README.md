@@ -41,14 +41,6 @@ The ARIA ecosystem is powered by the ARI token, which will be launched on pump.f
 
 The ARIA system consists of four primary layers, each with specialized components that work together to provide a seamless user experience.
 
-## Data Flow
-
-<div align="center">
-  <img src="assets/diagrams/data-flow.svg" alt="ARIA Data Flow" width="800">
-</div>
-
-This diagram illustrates how data flows through the ARIA system, from user input to AI processing and back to user response.
-
 ## AI Models Integration
 
 <div align="center">
