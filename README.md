@@ -711,9 +711,6 @@ ARIA/
 │
 ├── README.md                    # Project overview and documentation
 ├── LICENSE                      # MIT license
-├── PROJECT_SUMMARY.md           # Project summary
-├── DATE_UPDATE_REPORT.md        # Date update report
-├── GITHUB_SETUP.md              # GitHub setup guide
 ├── docker-compose.yml           # Docker configuration
 │
 ├── .github/                     # GitHub related configuration
@@ -722,19 +719,81 @@ ARIA/
 │
 ├── assets/                      # Static assets
 │   ├── logo.svg                 # Project logo
-│   └── diagrams/                # Diagrams directory
-│       ├── architecture.svg     # Architecture diagram
-│       ├── data-flow.svg        # Data flow diagram
+│   └── diagrams/                # Architecture diagrams
+│       ├── architecture.svg     # System architecture diagram
 │       └── models-integration.svg # AI models integration diagram
 │
 ├── docs/                        # Documentation directory
-│   ├── whitepaper.md            # Whitepaper
-│   ├── tokenomics.md            # Token economics
+│   ├── whitepaper.md            # Project whitepaper
+│   ├── tokenomics.md            # Token economics documentation
 │   ├── installation.md          # Installation guide
-│   ├── security_audit.md        # Security audit
-│   ├── index.md                 # Documentation index
-│   ├── android_architecture.md  # Android architecture document
-│   └── en/                      # English documentation
+│   ├── security_audit.md        # Security audit reports
+│   └── api/                     # API documentation
+│       └── index.md             # API documentation index
+│
+├── contract/                    # Solana smart contracts
+│   ├── Cargo.toml               # Rust dependencies
+│   ├── README.md                # Contract documentation
+│   └── src/                     # Contract source code
+│       └── lib.rs               # Token contract implementation
+│
+├── backend/                     # Node.js backend server
+│   ├── package.json             # NPM dependencies
+│   ├── jest.config.js           # Test configuration
+│   └── src/                     # Server-side code
+│       ├── controllers/         # API controllers
+│       │   ├── user.controller.js
+│       │   ├── chat.controller.js
+│       │   ├── token.controller.js
+│       │   └── solana.controller.js
+│       ├── routes/              # API routes
+│       │   ├── api.routes.js    # API route definitions
+│       │   └── index.js         # Route setup
+│       ├── middleware/          # Express middleware
+│       │   ├── auth.middleware.js  # Authentication middleware
+│       │   └── error.middleware.js # Error handling middleware
+│       ├── services/            # Service layer
+│       │   ├── ai/              # AI services
+│       │   │   ├── openai.service.js   # OpenAI integration
+│       │   │   ├── deepseek.service.js # DeepSeek integration
+│       │   │   └── anthropic.service.js # Anthropic integration
+│       │   ├── blockchain/      # Blockchain services
+│       │   │   └── solana.service.js   # Solana integration
+│       │   ├── user.service.js  # User management service
+│       │   └── conversation.service.js # Conversation management
+│       ├── models/              # Data models
+│       │   ├── user.model.js    # User model
+│       │   └── message.model.js # Message model
+│       ├── utils/               # Utility functions
+│       │   ├── prompt.utils.js  # AI prompt utilities
+│       │   └── crypto.utils.js  # Cryptography utilities
+│       ├── config/              # Configuration files
+│       │   └── app.config.js    # App configuration
+│       └── index.js             # Server entry point
+│
+├── frontend/                    # Web frontend (React)
+│   ├── package.json             # NPM dependencies
+│   ├── public/                  # Static assets
+│   │   ├── index.html           # Main HTML file
+│   │   └── favicon.ico          # Website favicon
+│   └── src/                     # React components and logic
+│       ├── components/          # UI components
+│       │   ├── common/          # Common UI components
+│       │   ├── chat/            # Chat related components
+│       │   └── wallet/          # Wallet related components
+│       ├── pages/               # Page components
+│       │   ├── Dashboard.js     # Dashboard page
+│       │   ├── Chat.js          # Chat interface
+│       │   └── Wallet.js        # Wallet interface
+│       ├── services/            # Services for API calls
+│       │   ├── api.service.js   # API client
+│       │   └── wallet.service.js # Wallet service
+│       ├── state/               # State management
+│       │   ├── store.js         # Redux store
+│       │   └── reducers/        # Redux reducers
+│       ├── utils/               # Utility functions
+│       │   └── formatting.js    # Data formatting utilities
+│       └── App.js               # Main App component
 │
 ├── app/                         # Android application
 │   ├── build.gradle             # Project-level build file
@@ -748,63 +807,30 @@ ARIA/
 │               │   ├── ARIAApplication.kt   # Application class
 │               │   ├── ui/             # UI components
 │               │   │   ├── MainActivity.kt  # Main activity
+│               │   │   ├── chat/       # Chat UI
+│               │   │   ├── wallet/     # Wallet UI
 │               │   │   └── settings/   # Settings screens
-│               │   │       ├── LanguageSelectionScreen.kt  # Language selection screen
-│               │   │       ├── LanguageSettingsViewModel.kt # Language settings view model
-│               │   │       ├── SettingsScreen.kt    # Settings screen
-│               │   │       └── SettingsViewModel.kt # Settings view model
+│               │   ├── data/           # Data handling
+│               │   │   ├── models/     # Data models
+│               │   │   └── repository/ # Repositories
+│               │   ├── network/        # Network communication
+│               │   │   ├── api/        # API client
+│               │   │   └── blockchain/ # Blockchain integration
 │               │   └── utils/          # Utility classes
-│               │       └── LocaleHelper.kt    # Language settings helper
+│               │       ├── LocaleHelper.kt # Language settings helper
+│               │       └── Extensions.kt   # Kotlin extensions
 │               ├── res/                # Resource files
-│               │   ├── values/         # Default resource values
+│               │   ├── layout/         # Layout files
+│               │   ├── values/         # Resource values
+│               │   │   ├── colors.xml  # Color definitions
 │               │   │   └── strings.xml # String resources
-│               │   ├── values-zh/      # Chinese resources
-│               │   │   └── strings.xml # Chinese string resources
-│               │   ├── values-es/      # Spanish resources (placeholder)
-│               │   ├── values-fr/      # French resources (placeholder)
-│               │   └── values-ja/      # Japanese resources (placeholder)
+│               │   └── drawable/       # Drawable resources
 │               └── AndroidManifest.xml # App manifest
 │
-├── backend/                     # Node.js backend server
-│   ├── package.json             # NPM dependencies
-│   └── src/                     # Server-side code
-│       ├── controllers/         # API controllers
-│       │   ├── user.controller.js
-│       │   ├── token.controller.js
-│       │   └── solana.controller.js
-│       ├── routes/              # API routes
-│       ├── middleware/          # Express middleware
-│       ├── services/            # Service layer
-│       │   └── ai/              # AI services
-│       │       ├── openai.service.js   # OpenAI integration
-│       │       ├── deepseek.service.js # DeepSeek integration
-│       │       └── anthropic.service.js # Anthropic integration
-│       ├── utils/               # Utility functions
-│       └── index.js             # Server entry point
-│
-├── frontend/                    # Web frontend (React)
-│   ├── package.json             # NPM dependencies
-│   ├── public/                  # Static assets
-│   └── src/                     # React components and logic
-│       ├── components/          # UI components
-│       ├── pages/               # Page components
-│       │   └── DashboardPage.js # Dashboard page
-│       ├── services/            # Services
-│       └── utils/               # Utility functions
-│
-├── contract/                    # Solana smart contracts
-│   ├── Cargo.toml               # Rust dependencies
-│   ├── README.md                # Contract documentation
-│   └── src/                     # Contract source code
-│       └── lib.rs               # Token contract implementation
-│
-├── server/                      # Other server components
-│
-└── scripts/                     # Scripts directory
+└── scripts/                     # Utility scripts
     ├── deploy_token.js          # Token deployment script
-    ├── pump_fun_listing.js      # pump.fun listing script
-    ├── test_token_devnet.js     # Devnet test script
-    └── temp/                    # Temporary files
+    ├── pump_fun_listing.js      # Token listing script
+    └── test_token_devnet.js     # Devnet test script
 ```
 
 ## Getting Started
